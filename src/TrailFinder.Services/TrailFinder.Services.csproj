@@ -39,6 +39,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack">
+      <HintPath>..\packages\ServiceStack.4.0.32\lib\net40\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client">
+      <HintPath>..\packages\ServiceStack.Client.4.0.32\lib\net40\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.4.0.32\lib\net40\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.32\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.4.0.32\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,6 +72,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,10 +81,34 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrailFinder.Services.Core\TrailFinder.Services.Core.csproj">
+      <Project>{ac58f65e-3842-4e43-84e5-ddb9d54694af}</Project>
+      <Name>TrailFinder.Services.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrailFinder.Services.Data\TrailFinder.Services.Data.csproj">
+      <Project>{9ff3583d-d805-47aa-8f9b-bf5f68bef3bb}</Project>
+      <Name>TrailFinder.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrailFinder.Services.Logic\TrailFinder.Services.Logic.csproj">
+      <Project>{be7cb6a0-dafa-423a-8de0-81b376089460}</Project>
+      <Name>TrailFinder.Services.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrailFinder.Services.ServiceInterface\TrailFinder.Services.ServiceInterface.csproj">
+      <Project>{1906be05-a3a6-4bfa-8394-6b7e39b8f360}</Project>
+      <Name>TrailFinder.Services.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrailFinder.Services.ServiceModel\TrailFinder.Services.ServiceModel.csproj">
+      <Project>{dd1aba93-7d11-433e-9d86-4d4293223129}</Project>
+      <Name>TrailFinder.Services.ServiceModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

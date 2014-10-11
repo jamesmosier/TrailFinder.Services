@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.35\lib\net45\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +43,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrailFinder.Services.Core\TrailFinder.Services.Core.csproj">
+      <Project>{ac58f65e-3842-4e43-84e5-ddb9d54694af}</Project>
+      <Name>TrailFinder.Services.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrailFinder.Services.ServiceModel\TrailFinder.Services.ServiceModel.csproj">
+      <Project>{dd1aba93-7d11-433e-9d86-4d4293223129}</Project>
+      <Name>TrailFinder.Services.ServiceModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
