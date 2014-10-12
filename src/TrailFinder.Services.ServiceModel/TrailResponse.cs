@@ -1,5 +1,6 @@
 ﻿namespace TrailFinder.Services.ServiceModel
 {
+    using System;
     using ServiceStack;
 
     public class TrailResponse
@@ -9,8 +10,8 @@
         /// <summary>
         /// Gets or sets the trailhead id.
         /// </summary>
-        [ApiMember(AllowMultiple = false, DataType = "decimal", Description = "The id of the trailhead.", IsRequired = true, Name = "Id", ParameterType = "body")]
-        public decimal Id { get; set; }
+        [ApiMember(AllowMultiple = false, DataType = "Guid", Description = "The id of the trailhead.", IsRequired = true, Name = "Id", ParameterType = "body")]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the trailhead name.
@@ -27,14 +28,14 @@
         /// <summary>
         /// Gets or sets the trailhead latitude coordinate.
         /// </summary>
-        [ApiMember(AllowMultiple = false, DataType = "int", Description = "The latitude coordinate of the trailhead.", IsRequired = true, Name = "Latitude", ParameterType = "body")]
-        public int Latitude { get; set; }
+        [ApiMember(AllowMultiple = false, DataType = "decimal", Description = "The latitude coordinate of the trailhead.", IsRequired = true, Name = "Latitude", ParameterType = "body")]
+        public decimal Latitude { get; set; }
 
         /// <summary>
         /// Gets or sets the trailhead longitude coordinate.
         /// </summary>
-        [ApiMember(AllowMultiple = false, DataType = "int", Description = "The longitude coordinate of the trailhead.", IsRequired = true, Name = "Longitude", ParameterType = "body")]
-        public int Longitude { get; set; }
+        [ApiMember(AllowMultiple = false, DataType = "decimal", Description = "The longitude coordinate of the trailhead.", IsRequired = true, Name = "Longitude", ParameterType = "body")]
+        public decimal Longitude { get; set; }
 
         #endregion
     }

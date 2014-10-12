@@ -31,7 +31,6 @@
 
             using (var connection = new SqlConnection(connectionString))
             {
-                //id AS Id, name AS Name, description AS Description, latitude AS Latitude, longitude AS Longitude
                 trails = connection.Query<TrailResponse>("SELECT * FROM trail").ToList();
             }
 

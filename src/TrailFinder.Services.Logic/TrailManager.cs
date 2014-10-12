@@ -1,5 +1,6 @@
 ﻿namespace TrailFinder.Services.Logic
 {
+    using System.Linq;
     using Data.Interfaces;
     using Interfaces;
     using ServiceModel.Requests;
@@ -10,13 +11,13 @@
     /// </summary>
     public class TrailManager : ITrailManager
     {
-        #region Fields  
+        #region Fields
 
         private readonly ITrailRepository trailRepository;
 
         #endregion
 
-                #region Constructors
+        #region Constructors
 
         public TrailManager(ITrailRepository iTrailRepository)
         {
@@ -33,6 +34,7 @@
             var response = new GetTrailsResponse();
 
             var trails = this.trailRepository.GetTrailHeads();
+            response.Trails = trails.ToList();
 
             return response;
         }
