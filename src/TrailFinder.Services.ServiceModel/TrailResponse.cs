@@ -7,6 +7,12 @@
         #region Properties
 
         /// <summary>
+        /// Gets or sets the trailhead id.
+        /// </summary>
+        [ApiMember(AllowMultiple = false, DataType = "decimal", Description = "The id of the trailhead.", IsRequired = true, Name = "Id", ParameterType = "body")]
+        public decimal Id { get; set; }
+
+        /// <summary>
         /// Gets or sets the trailhead name.
         /// </summary>
         [ApiMember(AllowMultiple = false, DataType = "string", Description = "The name of the trailhead.", IsRequired = true, Name = "Name", ParameterType = "body")]

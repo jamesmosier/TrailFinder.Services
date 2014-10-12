@@ -18,9 +18,9 @@
 
         #region Constructors
 
-        public TrailsService(ITrailManager trailManager)
+        public TrailsService(ITrailManager iTrailManager)
         {
-            this.trailManager = trailManager;
+            this.trailManager = iTrailManager;
         }
 
         #endregion
