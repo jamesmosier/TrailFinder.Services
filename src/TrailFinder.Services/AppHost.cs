@@ -7,10 +7,6 @@
 
     using ServiceStack;
     using ServiceStack.Api.Swagger;
-
-    using Core;
-    using Data;
-    using Data.Interfaces;
     using Logic;
     using Logic.Interfaces;
 
@@ -20,7 +16,7 @@
         public AppHost()
             : base("TrailFinder Services", typeof(TrailsService).Assembly)
         {
-
+            
         }
 
         public override void Configure(Container container)
