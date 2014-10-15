@@ -16,7 +16,8 @@
         public AppHost()
             : base("TrailFinder Services", typeof(TrailsService).Assembly)
         {
-            
+            //populate db automatically with data
+            DataRepository.PopulateDb();
         }
 
         public override void Configure(Container container)
