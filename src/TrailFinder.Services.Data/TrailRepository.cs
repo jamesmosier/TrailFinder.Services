@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.Data.SqlClient;
     using System.Linq;
+    using System.Web.Configuration;
+
     using Interfaces;
     using ServiceModel;
 
@@ -18,7 +20,7 @@
 
         #region Fields
 
-        private static readonly string connectionString = ConfigurationManager.AppSettings["DBConnectionString"];
+        private static readonly string connectionString = WebConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
 
         #endregion
 
@@ -33,7 +35,7 @@
             {
                 trails = connection.Query<TrailResponse>("SELECT * FROM trail").ToList();
             }
-           
+
             return trails;
         }
 

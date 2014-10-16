@@ -5,6 +5,7 @@
     using System.Configuration;
     using System.Data.SqlClient;
     using System.Linq;
+    using System.Web.Configuration;
 
     using Dapper;
 
@@ -12,8 +13,8 @@
     {
         #region Fields
 
-        private static readonly string connectionString = ConfigurationManager.AppSettings["DBConnectionString"];
-
+        private static readonly string connectionString = WebConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+        
         #endregion
 
         #region Public Methods
