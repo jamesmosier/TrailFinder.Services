@@ -22,6 +22,10 @@
 
         public override void Configure(Container container)
         {
+            //these are so ServiceStack doesn't display Resources and ResourceRequest as Operations on the /metadata page
+            typeof(Resources).AddAttributes(new RestrictAttribute { VisibilityTo = RequestAttributes.None });
+            typeof(ResourceRequest).AddAttributes(new RestrictAttribute { VisibilityTo = RequestAttributes.None });
+
             container.RegisterAutoWiredAs<TrailRepository, ITrailRepository>();
 
             container.Register<ITrailManager>(c => new TrailManager(c.Resolve<ITrailRepository>()));
