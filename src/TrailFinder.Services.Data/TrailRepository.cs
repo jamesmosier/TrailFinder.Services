@@ -33,9 +33,7 @@
             {
                 trails = connection.Query<TrailResponse>("SELECT * FROM trail").ToList();
             }
-
-            var trap = 12;
-
+           
             return trails;
         }
 
