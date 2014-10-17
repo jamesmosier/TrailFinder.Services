@@ -31,15 +31,8 @@
             container.Register<ITrailManager>(c => new TrailManager(c.Resolve<ITrailRepository>()));
 
             //container.Register(c=> new TrailRepository(c.Resolve<IConfig>())).ReusedWithin(ReuseScope.Request);
-            
-            base.SetConfig(new HostConfig
-            {
-                GlobalResponseHeaders = {
-                    { "Access-Control-Allow-Origin", "http://localhost" },
-                    { "Access-Control-Allow-Methods", "GET, POST, PUT, OPTIONS" },
-                    { "Access-Control-Allow-Headers", "Content-Type" },
-                },
-            });
+
+            Plugins.Add(new CorsFeature());
         }
     }
 }
